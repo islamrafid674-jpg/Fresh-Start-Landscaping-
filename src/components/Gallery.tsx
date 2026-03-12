@@ -39,7 +39,7 @@ export default function Gallery() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
-            <span className="text-emerald-500 font-semibold tracking-wider uppercase text-sm mb-4 block">Portfolio</span>
+            <span className="text-brand-500 font-semibold tracking-wider uppercase text-sm mb-4 block">Portfolio</span>
             <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
               Our Recent <span className="italic text-zinc-500">Masterpieces</span>
             </h2>
@@ -70,7 +70,7 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
               
               <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <span className="text-emerald-400 font-medium text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{project.category}</span>
+                <span className="text-brand-400 font-medium text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{project.category}</span>
                 <h3 className="text-2xl font-serif font-medium text-white">{project.title}</h3>
               </div>
             </motion.div>

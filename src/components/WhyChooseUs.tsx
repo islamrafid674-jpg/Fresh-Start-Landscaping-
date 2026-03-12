@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-emerald-600 font-semibold tracking-wider uppercase text-sm mb-4 block">Why Choose Us</span>
+              <span className="text-brand-600 font-semibold tracking-wider uppercase text-sm mb-4 block">Why Choose Us</span>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-zinc-900 mb-6 leading-tight">
                 The Trusted Choice for <span className="italic text-zinc-500">Philadelphia</span> Homeowners
               </h2>
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                 {reasons.map((reason, index) => (
                   <div key={index} className="flex gap-5 group">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-12 h-12 rounded-2xl bg-zinc-50 border border-zinc-100 flex items-center justify-center group-hover:bg-emerald-600 group-hover:border-emerald-600 transition-colors duration-300 shadow-sm">
+                      <div className="w-12 h-12 rounded-2xl bg-zinc-50 border border-zinc-100 flex items-center justify-center group-hover:bg-brand-600 group-hover:border-brand-600 transition-colors duration-300 shadow-sm">
                         <reason.icon className="w-5 h-5 text-zinc-700 group-hover:text-white transition-colors duration-300" />
                       </div>
                     </div>
@@ -70,17 +70,18 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
             >
-              <div className="absolute inset-0 bg-emerald-600/10 mix-blend-overlay z-10"></div>
+              <div className="absolute inset-0 bg-brand-600/10 mix-blend-overlay z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1585320806297-9794b3e4ce88?q=80&w=2070&auto=format&fit=crop" 
+                src="https://www.lawnstarter.com/cdn-cgi/image/dpr=1,fit=cover,gravity=center,quality=85,format=auto,onerror=redirect,metadata=keep,height=309,width=416,/https://www.lawnstarter.com/build/assets/lawn-mowing-e09279d1.png" 
                 alt="Professional landscaping work" 
-                className="w-full h-auto object-cover aspect-[4/5] md:aspect-[3/4]"
+                className="w-full h-full object-cover aspect-[4/5] md:aspect-[3/4]"
+                referrerPolicy="no-referrer"
               />
               
               {/* Floating Badge */}
               <div className="absolute top-8 right-8 z-20 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/50 flex items-center gap-4">
-                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6 text-brand-600" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-zinc-900">100% Satisfaction</p>

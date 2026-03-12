@@ -36,7 +36,7 @@ export default function Hero() {
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.05] mb-6 tracking-tight">
               Elevate Your <br className="hidden md:block" />
-              <span className="italic text-emerald-400">Outdoor Living</span>
+              <span className="italic text-brand-400">Outdoor Living</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-zinc-300 mb-10 max-w-2xl leading-relaxed font-light">
@@ -46,11 +46,11 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-5">
               <a
                 href="#contact"
-                className="group relative inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:shadow-[0_0_60px_rgba(5,150,105,0.5)]"
+                className="group relative inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(5,150,105,0.3)] hover:shadow-[0_0_60px_rgba(5,150,105,0.5)]"
               >
                 <span className="relative z-10">Get Your Free Estimate</span>
                 <ChevronRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-500 to-brand-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
               <a
                 href="#services"
@@ -72,7 +72,7 @@ export default function Hero() {
               </div>
               <div className="hidden md:block">
                 <div className="flex items-center gap-2 mb-1">
-                  <ShieldCheck className="w-8 h-8 text-emerald-400" />
+                  <ShieldCheck className="w-8 h-8 text-brand-400" />
                 </div>
                 <p className="text-sm text-zinc-400 font-medium tracking-wide uppercase">Licensed & Insured</p>
               </div>

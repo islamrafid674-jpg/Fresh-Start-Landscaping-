@@ -30,13 +30,13 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 md:py-32 bg-zinc-50 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-emerald-600/5 blur-3xl"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-emerald-600/5 blur-3xl"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-brand-600/5 blur-3xl"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-brand-600/5 blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <span className="text-emerald-600 font-semibold tracking-wider uppercase text-sm mb-4 block">Testimonials</span>
+          <span className="text-brand-600 font-semibold tracking-wider uppercase text-sm mb-4 block">Testimonials</span>
           <h2 className="text-4xl md:text-6xl font-serif text-zinc-900 mb-6 leading-tight">
             Loved by <span className="italic text-zinc-500">Homeowners</span>
           </h2>
@@ -53,9 +53,9 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white p-8 md:p-10 rounded-[2rem] border border-zinc-100 relative shadow-sm hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-500 group"
+              className="bg-white p-8 md:p-10 rounded-[2rem] border border-zinc-100 relative shadow-sm hover:shadow-2xl hover:shadow-brand-900/5 transition-all duration-500 group"
             >
-              <Quote className="absolute top-8 right-8 w-12 h-12 text-zinc-100 group-hover:text-emerald-50 transition-colors duration-500" />
+              <Quote className="absolute top-8 right-8 w-12 h-12 text-zinc-100 group-hover:text-brand-50 transition-colors duration-500" />
               
               <div className="flex gap-1 mb-8">
                 {[...Array(testimonial.rating)].map((_, i) => (

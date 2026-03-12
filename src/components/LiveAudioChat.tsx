@@ -61,9 +61,9 @@ export default function LiveAudioChat() {
                 const base64Data = base64EncodeAudio(pcmData);
                 
                 sessionPromise.then((session) => {
-                  session.sendRealtimeInput({
+                  session.sendRealtimeInput([{
                     media: { data: base64Data, mimeType: 'audio/pcm;rate=16000' }
-                  });
+                  }]);
                 });
               };
               
@@ -196,7 +196,7 @@ export default function LiveAudioChat() {
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-serif font-medium text-xl flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-emerald-400" />
+                <Sparkles className="w-5 h-5 text-brand-400" />
                 AI Assistant
               </h3>
               <button onClick={() => setIsOpen(false)} className="text-zinc-500 hover:text-zinc-300 transition-colors">
@@ -217,28 +217,28 @@ export default function LiveAudioChat() {
             <div className="flex flex-col items-center justify-center p-6 bg-zinc-950 rounded-xl border border-zinc-800 relative overflow-hidden">
               {/* Subtle background glow when active */}
               {isConnected && (
-                <div className="absolute inset-0 bg-emerald-900/10 blur-xl pointer-events-none"></div>
+                <div className="absolute inset-0 bg-brand-900/10 blur-xl pointer-events-none"></div>
               )}
 
               {!isConnected ? (
                 <button
                   onClick={connect}
                   disabled={isConnecting}
-                  className="w-16 h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center hover:bg-emerald-500 transition-all duration-300 shadow-lg shadow-emerald-900/20 disabled:opacity-70 disabled:hover:bg-emerald-600 hover:scale-105"
+                  className="w-16 h-16 rounded-full bg-brand-600 text-white flex items-center justify-center hover:bg-brand-500 transition-all duration-300 shadow-lg shadow-brand-900/20 disabled:opacity-70 disabled:hover:bg-brand-600 hover:scale-105"
                 >
                   {isConnecting ? <Loader2 className="w-8 h-8 animate-spin" /> : <Mic className="w-8 h-8" />}
                 </button>
               ) : (
                 <div className="flex flex-col items-center relative z-10">
-                  <div className={`relative w-20 h-20 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${isSpeaking ? 'bg-emerald-900/30 border border-emerald-500/30' : 'bg-zinc-900 border border-zinc-800'}`}>
+                  <div className={`relative w-20 h-20 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${isSpeaking ? 'bg-brand-900/30 border border-brand-500/30' : 'bg-zinc-900 border border-zinc-800'}`}>
                     {isSpeaking && (
                       <motion.div
                         animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        className="absolute inset-0 rounded-full border-2 border-emerald-500"
+                        className="absolute inset-0 rounded-full border-2 border-brand-500"
                       />
                     )}
-                    <Volume2 className={`w-8 h-8 transition-colors duration-300 ${isSpeaking ? 'text-emerald-400' : 'text-zinc-600'}`} />
+                    <Volume2 className={`w-8 h-8 transition-colors duration-300 ${isSpeaking ? 'text-brand-400' : 'text-zinc-600'}`} />
                   </div>
                   <p className="text-sm font-medium text-zinc-400 mb-6 tracking-wide">
                     {isSpeaking ? 'AI is speaking...' : 'Listening...'}
@@ -262,7 +262,7 @@ export default function LiveAudioChat() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(true)}
-          className="w-14 h-14 bg-emerald-600 text-white rounded-full shadow-xl shadow-emerald-900/20 flex items-center justify-center hover:bg-emerald-500 transition-colors border border-emerald-400/20"
+          className="w-14 h-14 bg-brand-600 text-white rounded-full shadow-xl shadow-brand-900/20 flex items-center justify-center hover:bg-brand-500 transition-colors border border-brand-400/20"
         >
           <Sparkles className="w-6 h-6" />
         </motion.button>

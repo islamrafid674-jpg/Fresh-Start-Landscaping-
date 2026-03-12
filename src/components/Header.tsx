@@ -45,7 +45,7 @@ export default function Header() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className={`text-sm font-medium tracking-wide hover:text-emerald-500 transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-emerald-500 after:transition-all after:duration-300 hover:after:w-full ${
+                  className={`text-sm font-medium tracking-wide hover:text-brand-500 transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-brand-500 after:transition-all after:duration-300 hover:after:w-full ${
                     isScrolled ? 'text-zinc-700' : 'text-white/90 drop-shadow-md'
                   }`}
                 >
@@ -56,7 +56,7 @@ export default function Header() {
           </ul>
           <a
             href="#contact"
-            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm shadow-lg shadow-emerald-900/20 hover:shadow-emerald-900/40 hover:-translate-y-0.5"
+            className="flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm shadow-lg shadow-brand-900/20 hover:shadow-brand-900/40 hover:-translate-y-0.5"
           >
             <Phone className="w-4 h-4" />
             <span>Get a Quote</span>
@@ -88,7 +88,7 @@ export default function Header() {
                     <a
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block text-zinc-700 font-medium text-lg hover:text-emerald-600 transition-colors"
+                      className="block text-zinc-700 font-medium text-lg hover:text-brand-600 transition-colors"
                     >
                       {link.name}
                     </a>
@@ -98,7 +98,7 @@ export default function Header() {
                   <a
                     href="#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 rounded-xl font-medium transition-colors shadow-lg shadow-emerald-900/20"
+                    className="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-4 rounded-xl font-medium transition-colors shadow-lg shadow-brand-900/20"
                   >
                     <Phone className="w-5 h-5" />
                     <span>Get a Free Quote</span>
