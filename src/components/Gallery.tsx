@@ -35,34 +35,43 @@ const projects = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-16 md:py-24 bg-zinc-50">
+    <section id="gallery" className="py-24 md:py-32 bg-zinc-950 text-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 md:mb-6">Our Recent Work</h2>
-          <p className="text-base md:text-lg text-zinc-600">
-            Browse through our portfolio of completed landscaping, lawn care, and cleanup projects across Philadelphia.
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
+          <div className="max-w-2xl">
+            <span className="text-emerald-500 font-semibold tracking-wider uppercase text-sm mb-4 block">Portfolio</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
+              Our Recent <span className="italic text-zinc-500">Masterpieces</span>
+            </h2>
+          </div>
+          <p className="text-lg text-zinc-400 max-w-md leading-relaxed">
+            Browse through our portfolio of completed landscaping, lawn care, and hardscaping projects across Philadelphia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[300px]">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`group relative rounded-[2rem] overflow-hidden cursor-pointer ${
+                index === 0 || index === 4 ? 'md:col-span-2 md:row-span-2' : 'md:col-span-2 lg:col-span-1 md:row-span-1'
+              }`}
             >
-              <img
-                src={project.image}
-                alt={project.title}
+              <img 
+                src={project.image} 
+                alt={project.title} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-green-500 font-medium text-sm mb-1">{project.category}</span>
-                <h3 className="text-white text-xl font-bold">{project.title}</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              
+              <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span className="text-emerald-400 font-medium text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{project.category}</span>
+                <h3 className="text-2xl font-serif font-medium text-white">{project.title}</h3>
               </div>
             </motion.div>
           ))}

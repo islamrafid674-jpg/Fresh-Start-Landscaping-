@@ -192,55 +192,60 @@ export default function LiveAudioChat() {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="bg-white rounded-2xl shadow-2xl border border-zinc-200 p-6 mb-4 w-80"
+            className="bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-800 p-6 mb-4 w-80 text-white"
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold text-zinc-900 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-green-600" />
+              <h3 className="font-serif font-medium text-xl flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-emerald-400" />
                 AI Assistant
               </h3>
-              <button onClick={() => setIsOpen(false)} className="text-zinc-400 hover:text-zinc-700">
+              <button onClick={() => setIsOpen(false)} className="text-zinc-500 hover:text-zinc-300 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
             
-            <p className="text-sm text-zinc-600 mb-6">
+            <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
               Have questions about our landscaping services? Talk to our AI assistant in real-time.
             </p>
 
             {error && (
-              <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm mb-4">
+              <div className="bg-red-950/50 border border-red-900/50 text-red-400 p-3 rounded-xl text-sm mb-4">
                 {error}
               </div>
             )}
 
-            <div className="flex flex-col items-center justify-center p-4 bg-zinc-50 rounded-xl border border-zinc-100">
+            <div className="flex flex-col items-center justify-center p-6 bg-zinc-950 rounded-xl border border-zinc-800 relative overflow-hidden">
+              {/* Subtle background glow when active */}
+              {isConnected && (
+                <div className="absolute inset-0 bg-emerald-900/10 blur-xl pointer-events-none"></div>
+              )}
+
               {!isConnected ? (
                 <button
                   onClick={connect}
                   disabled={isConnecting}
-                  className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 transition-all shadow-lg disabled:opacity-70"
+                  className="w-16 h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center hover:bg-emerald-500 transition-all duration-300 shadow-lg shadow-emerald-900/20 disabled:opacity-70 disabled:hover:bg-emerald-600 hover:scale-105"
                 >
                   {isConnecting ? <Loader2 className="w-8 h-8 animate-spin" /> : <Mic className="w-8 h-8" />}
                 </button>
               ) : (
-                <div className="flex flex-col items-center">
-                  <div className={`relative w-20 h-20 rounded-full flex items-center justify-center mb-4 transition-all duration-300 ${isSpeaking ? 'bg-green-600/20' : 'bg-zinc-200'}`}>
+                <div className="flex flex-col items-center relative z-10">
+                  <div className={`relative w-20 h-20 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${isSpeaking ? 'bg-emerald-900/30 border border-emerald-500/30' : 'bg-zinc-900 border border-zinc-800'}`}>
                     {isSpeaking && (
                       <motion.div
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ repeat: Infinity, duration: 1.5 }}
-                        className="absolute inset-0 rounded-full border-2 border-green-600"
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="absolute inset-0 rounded-full border-2 border-emerald-500"
                       />
                     )}
-                    <Volume2 className={`w-8 h-8 ${isSpeaking ? 'text-green-600' : 'text-zinc-500'}`} />
+                    <Volume2 className={`w-8 h-8 transition-colors duration-300 ${isSpeaking ? 'text-emerald-400' : 'text-zinc-600'}`} />
                   </div>
-                  <p className="text-sm font-medium text-zinc-700 mb-4">
+                  <p className="text-sm font-medium text-zinc-400 mb-6 tracking-wide">
                     {isSpeaking ? 'AI is speaking...' : 'Listening...'}
                   </p>
                   <button
                     onClick={disconnect}
-                    className="px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-medium hover:bg-red-200 transition-colors flex items-center gap-2"
+                    className="px-5 py-2.5 bg-red-950/50 border border-red-900/50 text-red-400 rounded-full text-sm font-medium hover:bg-red-900/50 hover:text-red-300 transition-colors flex items-center gap-2"
                   >
                     <MicOff className="w-4 h-4" />
                     End Call
@@ -257,7 +262,7 @@ export default function LiveAudioChat() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(true)}
-          className="w-14 h-14 bg-green-600 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-700 transition-colors"
+          className="w-14 h-14 bg-emerald-600 text-white rounded-full shadow-xl shadow-emerald-900/20 flex items-center justify-center hover:bg-emerald-500 transition-colors border border-emerald-400/20"
         >
           <Sparkles className="w-6 h-6" />
         </motion.button>

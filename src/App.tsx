@@ -16,7 +16,7 @@ import LiveAudioChat from './components/LiveAudioChat';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900 font-sans selection:bg-[#7d7a7a] selection:text-white scroll-smooth">
+    <div className="min-h-screen bg-zinc-50 text-zinc-900 font-sans scroll-smooth">
       <Header />
       <main>
         <Hero />
